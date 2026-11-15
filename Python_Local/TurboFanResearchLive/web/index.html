@@ -31,17 +31,18 @@
       <p class="desc">Last-cycle RUL. The dashed line means a perfect prediction.</p>
       <div id="scatter" class="plot"></div>
     </div>
-    <div class="plot-panel">
-      <h2>Residual distribution</h2>
-      <p class="desc">Prediction minus true RUL. Positive values overestimate life.</p>
-      <div id="residuals" class="plot"></div>
-    </div>
-    <div class="plot-panel wide">
+    <section class="card">
+        <h2>Residual distribution</h2>
+          <p class="desc">Prediction minus true RUL. Positive values overestimate life.</p>
+        <div id="residual" style="height: 320px;"></div>
+    </section>
+
+    <section class="card">
       <h2>Uncertainty versus error</h2>
-      <p class="desc">Does higher GP uncertainty correspond to a larger absolute error?</p>
-      <div id="uncertainty" class="plot"></div>
-    </div>
-  </section>
+      <p class="desc">One dot per engine at its last cycle. Dots below the dashed line have a true RUL inside the model's 95% interval.</p>
+      <div id="uncertainty" style="height: 360px;"></div>
+    </section>
+      
 
   <section id="engines" class="engine-table" aria-labelledby="h-table">
     <h2 id="h-table">Engine observations</h2>

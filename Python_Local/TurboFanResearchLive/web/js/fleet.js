@@ -62,9 +62,13 @@ function loadData() {
       summary = data;
       showSummary();
       showHeader();
+    
       showTable();
       showChart();
+      showResidualChart();
+      showUncertaintyChart();
     })
+    
     .catch(function (err) {
       var box = document.getElementById("error");
       box.hidden = false;
@@ -83,7 +87,7 @@ function makeBox(label, value, hint) {
 
 
 function showSummary() {
-  // count how many engines are critical
+  
   var criticalCount = 0;
   for (var i = 0; i < fleet.length; i++) {
     if (fleet[i].status == "critical") {
@@ -233,6 +237,91 @@ function showChart() {
   };
 
   Plotly.newPlot("scatter", [valTrace, testTrace, lineTrace], layout);
+}
+
+e
+function showResidualChart() {
+  var errors = [];
+  for (var i = 0; i < fleet.length; i++) {
+    errors.push(fleet[i].error);
+  }
+
+  var trace = {
+    x: errors,
+    type: "histogram",
+    nbinsx: 30,
+    marker: { color: "steelblue" },
+    name: "Engines"
+  };
+
+  var layout = {
+    xaxis: { title: "Prediction error (cycles)" },
+    yaxis: { title: "Number of engines" },
+    margin: { t: 20 },
+    
+    shapes: [{
+      type: "line", x0: 0, x1: 0, y0: 0, y1: 1, yref: "paper",
+      line: { color: "red", dash: "dash" }
+    }]
+  };
+
+  Plotly.newPlot("residual", [trace], layout);
+}
+
+
+// uncertainty (95% interval) on the x axis, size of the error on the y axis
+function makeErrorTrace(split, color) {
+  var xs = [];
+  var ys = [];
+  var names = [];
+  for (var i = 0; i < fleet.length; i++) {
+    if (fleet[i].split == split) {
+      xs.push(1.96 * fleet[i].std_last);
+      ys.push(Math.abs(fleet[i].error));
+      names.push("Engine #" + fleet[i].engine);
+    }
+  }
+  return {
+    x: xs,
+    y: ys,
+    text: names,
+    name: splitNames[split],
+    mode: "markers",
+    type: "scatter",
+    marker: { color: color, size: 8 }
+  };
+}
+
+
+function showUncertaintyChart() {
+  var valTrace = makeErrorTrace("val", "blue");
+  var testTrace = makeErrorTrace("test", "orange");
+
+  
+  var biggest = 0;
+  for (var i = 0; i < fleet.length; i++) {
+    var width = 1.96 * fleet[i].std_last;
+    var err = Math.abs(fleet[i].error);
+    if (width > biggest) { biggest = width; }
+    if (err > biggest) { biggest = err; }
+  }
+
+  // where error = interval width
+  var lineTrace = {
+    x: [0, biggest],
+    y: [0, biggest],
+    name: "Error = interval",
+    mode: "lines",
+    line: { color: "gray", dash: "dash" }
+  };
+
+  var layout = {
+    xaxis: { title: "Model uncertainty: 95% interval half-width (cycles)" },
+    yaxis: { title: "Absolute error (cycles)" },
+    margin: { t: 20 }
+  };
+
+  Plotly.newPlot("uncertainty", [valTrace, testTrace, lineTrace], layout);
 }
 
 

@@ -6,7 +6,7 @@
    "name": "Fan inlet temperature",
    "component": "Fan",
    "corr_rul": null,
-   "err_ref": 0.00010589313023956493
+   "err_ref": 0.00010660172119969502
   },
   {
    "id": "s2",
@@ -14,7 +14,7 @@
    "name": "LPC Outlet temperature",
    "component": "LPC",
    "corr_rul": -0.672,
-   "err_ref": 0.47927314043045044
+   "err_ref": 0.47944724559783936
   },
   {
    "id": "s3",
@@ -22,7 +22,7 @@
    "name": "HPC outlet temperature",
    "component": "HPC",
    "corr_rul": -0.7,
-   "err_ref": 0.4995450973510742
+   "err_ref": 0.4987553358078003
   },
   {
    "id": "s4",
@@ -30,7 +30,7 @@
    "name": "LPT outlet temperature",
    "component": "LPT",
    "corr_rul": -0.738,
-   "err_ref": 0.3088453412055969
+   "err_ref": 0.3089224696159363
   },
   {
    "id": "s5",
@@ -38,7 +38,7 @@
    "name": "Fan inlet pressure",
    "component": "Fan",
    "corr_rul": null,
-   "err_ref": 0.00010373473196523264
+   "err_ref": 0.00010483159712748602
   },
   {
    "id": "s6",
@@ -46,7 +46,7 @@
    "name": "Bypass-duct pressure",
    "component": "Bypass",
    "corr_rul": -0.337,
-   "err_ref": 0.9555807113647461
+   "err_ref": 0.9569751024246216
   },
   {
    "id": "s7",
@@ -54,7 +54,7 @@
    "name": "HPC outlet pressure",
    "component": "HPC",
    "corr_rul": -0.043,
-   "err_ref": 0.09538362920284271
+   "err_ref": 0.09528493881225586
   },
   {
    "id": "s8",
@@ -62,7 +62,7 @@
    "name": "Physical fan speed",
    "component": "Fan",
    "corr_rul": -0.769,
-   "err_ref": 2.3333311080932617
+   "err_ref": 2.3350157737731934
   },
   {
    "id": "s9",
@@ -70,7 +70,7 @@
    "name": "Physical core speed",
    "component": "HPC",
    "corr_rul": -0.49,
-   "err_ref": 0.17842769622802734
+   "err_ref": 0.17853480577468872
   },
   {
    "id": "s10",
@@ -78,7 +78,7 @@
    "name": "Engine pressure ratio",
    "component": "Bypass",
    "corr_rul": -0.413,
-   "err_ref": 0.004769851919263601
+   "err_ref": 0.0046462491154670715
   },
   {
    "id": "s11",
@@ -86,7 +86,7 @@
    "name": "HPC outlet static pressure",
    "component": "HPC",
    "corr_rul": -0.774,
-   "err_ref": 0.2442653477191925
+   "err_ref": 0.2440202832221985
   },
   {
    "id": "s12",
@@ -94,7 +94,7 @@
    "name": "Fuel flw/ Ps30",
    "component": "Combustor",
    "corr_rul": -0.074,
-   "err_ref": 0.08230149000883102
+   "err_ref": 0.08258092403411865
   },
   {
    "id": "s13",
@@ -102,7 +102,7 @@
    "name": "Corrected fan speed",
    "component": "Fan",
    "corr_rul": -0.769,
-   "err_ref": 2.4438700675964355
+   "err_ref": 2.4431843757629395
   },
   {
    "id": "s14",
@@ -110,7 +110,7 @@
    "name": "Corrected core speed",
    "component": "HPC",
    "corr_rul": -0.353,
-   "err_ref": 0.2129247933626175
+   "err_ref": 0.21123501658439636
   },
   {
    "id": "s15",
@@ -118,7 +118,7 @@
    "name": "Bypass ratio",
    "component": "Fan",
    "corr_rul": -0.184,
-   "err_ref": 0.21414512395858765
+   "err_ref": 0.21472597122192383
   },
   {
    "id": "s16",
@@ -126,7 +126,7 @@
    "name": "Burner fuel-air ratio",
    "component": "Combustor",
    "corr_rul": null,
-   "err_ref": 2.876353210012894e-05
+   "err_ref": 2.8351212677080184e-05
   },
   {
    "id": "s17",
@@ -134,7 +134,7 @@
    "name": "Bleed enthalpy",
    "component": "HPC",
    "corr_rul": -0.724,
-   "err_ref": 0.4416459798812866
+   "err_ref": 0.44210514426231384
   },
   {
    "id": "s18",
@@ -142,7 +142,7 @@
    "name": "Demanded fan speed",
    "component": "Fan",
    "corr_rul": null,
-   "err_ref": 4.859132968704216e-05
+   "err_ref": 4.912685108138248e-05
   },
   {
    "id": "s19",
@@ -150,7 +150,7 @@
    "name": "Demanded corrected fan speed",
    "component": "Fan",
    "corr_rul": null,
-   "err_ref": 4.362535764812492e-05
+   "err_ref": 4.365890345070511e-05
   },
   {
    "id": "s20",
@@ -158,7 +158,7 @@
    "name": "HPT coolant bleed",
    "component": "HPT",
    "corr_rul": 0.163,
-   "err_ref": 0.3063114285469055
+   "err_ref": 0.3047563433647156
   },
   {
    "id": "s21",
@@ -166,7 +166,7 @@
    "name": "LPT coolant bleed",
    "component": "LPT",
    "corr_rul": 0.174,
-   "err_ref": 0.3178948163986206
+   "err_ref": 0.3184466063976288
   }
  ],
  "units": "standardised (z-score)"

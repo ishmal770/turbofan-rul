@@ -107,12 +107,11 @@ def main():
                        "std": round_values(d["std"], 1), "z1": round_values(d["z"][:, 0], 3), "z2": round_values(d["z"][:, 1], 3),
                        "sensors": round_values(d["sensors"].T, 3), "anom": round_values(anom.T, 2)},
                       f, separators=(",", ":"))
-        fleet.append({"key": key, "split": split, "engine": eid, "cycles": len(d["true_rul"]),
-                      "true_rul_last": round(float(d["true_rul"][-1]), 1),
-                      "prediction_rul_last": round(float(d["prediction_rul"][-1]), 1),
-                      "std_last": round(float(d["std"][-1]), 1),
-                      "anom_last": round(float(anom[-10:].mean()), 2)})
-
+            fleet.append({"key": key, "split": split, "engine": eid, "cycles": len(d["true_rul"]),
+                    "rul_true_last": round(float(d["true_rul"][-1]), 1),
+                    "rul_pred_last": round(float(d["prediction_rul"][-1]), 1),
+                    "std_last": round(float(d["std"][-1]), 1),
+                    "anom_last": round(float(anom[-10:].mean()), 2)})
     rmse = float(np.sqrt(np.mean((P - R) ** 2)))
     json.dump({"sensors": meta, "units": "standardised (z-score)"},
               open(os.path.join(args.out, "sensors_meta.json"), "w"), indent=1)

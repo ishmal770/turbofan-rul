@@ -1,8 +1,5 @@
-outputs/
-runs/
-best_models/
-CMAPSSData/
-*.pt
-*.pkl
 __pycache__/
 .DS_Store
+runs/
+*.pkl
+*.pickle

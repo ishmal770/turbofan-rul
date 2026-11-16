@@ -26,41 +26,40 @@ Website. The pages in web/ read those JSON files and draw the charts with Plotly
 Most of the hours went into training. The autoencoder and the GPR together took over 1.5 hours per training run, mostly because a Gaussian Process becomes slow as the amount of data grows. The rest went into debugging and iterating: changing settings and features to lower the RMSE and improve accuracy, and fixing the many small problems that come with connecting two models.
 
 
+
 Dependencies
-Windows 10 or later (also works on macOS and Linux)
-Python 3.10 or newer
-Packages: torch, numpy, pandas, scikit-learn, omegaconf
-The NASA C-MAPSS FD003 data (included in the data folder)
+
+- Windows 10 or later (also works on macOS and Linux)
+- Python 3.10 or newer
+- Packages: `torch`, `numpy`, `pandas`, `scikit-learn`, `omegaconf`
+- The NASA C-MAPSS FD003 data (included in the `data` folder)
+
 Installing
-bash
+
+```bash
 git clone https://github.com/ishmal770/turbofan-rul.git
 cd turbofan-rul
 pip install torch numpy pandas scikit-learn omegaconf
+```
 
-The saved model files (.pkl) are not stored in the repo because of their size, so retrain them or ask me for them.
+The saved model files (`.pkl`) are not stored in the repo because of their size, so retrain them or ask me for them.
 
 Executing the program
 
 To rebuild the JSON results from the trained models:
 
-bash
+```bash
 python export_data.py
+```
 
 To view the website on your computer:
 
-bash
+```bash
 cd web
 python -m http.server 8000
+```
 
 Then open http://localhost:8000 in your browser.
 
-Help
-"Could not load the data" on the page: open the site through python -m http.server. Double-clicking index.html blocks the JSON files.
-ModuleNotFoundError: install the missing package with pip install <name> in the same Python you run the script with.
-Windows and data loading errors: set num_workers=0 in the dataloaders.
-Model file not found: check the paths at the top of export_data.py.
-Credits
-NASA C-MAPSS turbofan degradation dataset.
-The TSHAE autoencoder is by Mikhail Zaitsev (MIT license): https://github.com/insdout/Time-Series-Hybrid-Autoencoder
 
 

@@ -2,7 +2,7 @@ TurboFan Jet Engine RUL Prediction
 
 Live demo: https://ishmal770.github.io/turbofan-rul/
 
-Predicting how many cycles a jet engine has left before it fails, with a confidence interval, using an autoencoder and a Gaussian Process Regressor on NASA C-MAPSS (FD003).
+
 
 Overview
 

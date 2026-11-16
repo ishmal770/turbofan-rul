@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TurboFan RUL Results</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">TurboFan RUL Results</a>
+    <nav aria-label="Pages">
+      <a href="#results" aria-current="page">Results</a>
+      <a href="#engines">Engines</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Remaining useful life: FD003</h1>
+  <p class="sub">Statistical view of TSHAE + Gaussian-process predictions for the NASA C-MAPSS FD003 subdataset. These predictions include the Remaining Useful Life, which is estimating how many cycles the engine has left until it fails..</p>
+  <div id="error" hidden></div>
+
+  <section id="kpis" class="kpis" aria-label="Model summary"></section>
+
+  <section id="results" class="results" aria-label="Statistical results">
+    <div class="plot-panel">
+      <h2>Prediction accuracy</h2>
+      <p class="desc">Last-cycle RUL. The dashed line means a perfect prediction.</p>
+      <div id="scatter" class="plot"></div>
+    </div>
+    <section class="card">
+        <h2>Residual distribution</h2>
+          <p class="desc">Prediction minus true RUL. Positive values overestimate life.</p>
+        <div id="residual" style="height: 320px;"></div>
+    </section>
+
+    <section class="card">
+      <h2>Uncertainty versus error</h2>
+      <p class="desc">One dot per engine at its last cycle. Dots below the dashed line have a true RUL inside the model's 95% interval.</p>
+      <div id="uncertainty" style="height: 360px;"></div>
+    </section>
+  </section>
+  
+
+  <section id="engines" class="engine-table" aria-labelledby="h-table">
+    <h2 id="h-table">Engine observations</h2>
+    <p class="desc">Status uses the predicted RUL at the last observed cycle: Critical under 30, Watch under 60.</p>
+    <div class="controls">
+      <label>Split
+        <select id="fSplit">
+          <option value="all">All</option>
+          <option value="val">Validation</option>
+          <option value="test">Test</option>
+        </select>
+      </label>
+      <label>Status
+        <select id="fStatus">
+          <option value="all">All</option>
+          <option value="critical">Critical</option>
+          <option value="watch">Watch</option>
+          <option value="healthy">Healthy</option>
+        </select>
+      </label>
+      <label>Engine # <input id="fSearch" type="search" placeholder="e.g. 12" inputmode="numeric"></label>
+      <span id="count" class="count" aria-live="polite"></span>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr id="head"></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">NASA C-MAPSS FD003 &middot; precomputed TSHAE + GP results</footer>
+
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<script src="js/fleet.js"></script>
+</body>
+</html>

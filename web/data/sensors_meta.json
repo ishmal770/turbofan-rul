@@ -1,0 +1,173 @@
+{
+ "sensors": [
+  {
+   "id": "s1",
+   "symbol": "T2",
+   "name": "Fan inlet temperature",
+   "component": "Fan",
+   "corr_rul": null,
+   "err_ref": 0.00010589962039375678
+  },
+  {
+   "id": "s2",
+   "symbol": "T24",
+   "name": "LPC Outlet temperature",
+   "component": "LPC",
+   "corr_rul": -0.672,
+   "err_ref": 0.48017746210098267
+  },
+  {
+   "id": "s3",
+   "symbol": "T30",
+   "name": "HPC outlet temperature",
+   "component": "HPC",
+   "corr_rul": -0.7,
+   "err_ref": 0.4982106387615204
+  },
+  {
+   "id": "s4",
+   "symbol": "T50",
+   "name": "LPT outlet temperature",
+   "component": "LPT",
+   "corr_rul": -0.738,
+   "err_ref": 0.30859288573265076
+  },
+  {
+   "id": "s5",
+   "symbol": "P2",
+   "name": "Fan inlet pressure",
+   "component": "Fan",
+   "corr_rul": null,
+   "err_ref": 0.00010589784506009892
+  },
+  {
+   "id": "s6",
+   "symbol": "P15",
+   "name": "Bypass-duct pressure",
+   "component": "Bypass",
+   "corr_rul": -0.337,
+   "err_ref": 0.961326003074646
+  },
+  {
+   "id": "s7",
+   "symbol": "P30",
+   "name": "HPC outlet pressure",
+   "component": "HPC",
+   "corr_rul": -0.043,
+   "err_ref": 0.09621182084083557
+  },
+  {
+   "id": "s8",
+   "symbol": "Nf",
+   "name": "Physical fan speed",
+   "component": "Fan",
+   "corr_rul": -0.769,
+   "err_ref": 2.333280563354492
+  },
+  {
+   "id": "s9",
+   "symbol": "Nc",
+   "name": "Physical core speed",
+   "component": "HPC",
+   "corr_rul": -0.49,
+   "err_ref": 0.18001395463943481
+  },
+  {
+   "id": "s10",
+   "symbol": "epr",
+   "name": "Engine pressure ratio",
+   "component": "Bypass",
+   "corr_rul": -0.413,
+   "err_ref": 0.004561879672110081
+  },
+  {
+   "id": "s11",
+   "symbol": "Ps30",
+   "name": "HPC outlet static pressure",
+   "component": "HPC",
+   "corr_rul": -0.774,
+   "err_ref": 0.24350899457931519
+  },
+  {
+   "id": "s12",
+   "symbol": "phi",
+   "name": "Fuel flw/ Ps30",
+   "component": "Combustor",
+   "corr_rul": -0.074,
+   "err_ref": 0.08139322698116302
+  },
+  {
+   "id": "s13",
+   "symbol": "NRf",
+   "name": "Corrected fan speed",
+   "component": "Fan",
+   "corr_rul": -0.769,
+   "err_ref": 2.447416305541992
+  },
+  {
+   "id": "s14",
+   "symbol": "NRc",
+   "name": "Corrected core speed",
+   "component": "HPC",
+   "corr_rul": -0.353,
+   "err_ref": 0.20909078419208527
+  },
+  {
+   "id": "s15",
+   "symbol": "BPR",
+   "name": "Bypass ratio",
+   "component": "Fan",
+   "corr_rul": -0.184,
+   "err_ref": 0.21430276334285736
+  },
+  {
+   "id": "s16",
+   "symbol": "farB",
+   "name": "Burner fuel-air ratio",
+   "component": "Combustor",
+   "corr_rul": null,
+   "err_ref": 2.7819118258776143e-05
+  },
+  {
+   "id": "s17",
+   "symbol": "htBleed",
+   "name": "Bleed enthalpy",
+   "component": "HPC",
+   "corr_rul": -0.724,
+   "err_ref": 0.4422506093978882
+  },
+  {
+   "id": "s18",
+   "symbol": "Nf_dmd",
+   "name": "Demanded fan speed",
+   "component": "Fan",
+   "corr_rul": null,
+   "err_ref": 4.9828140618046746e-05
+  },
+  {
+   "id": "s19",
+   "symbol": "PCNfR_dmd",
+   "name": "Demanded corrected fan speed",
+   "component": "Fan",
+   "corr_rul": null,
+   "err_ref": 4.363794141681865e-05
+  },
+  {
+   "id": "s20",
+   "symbol": "W31",
+   "name": "HPT coolant bleed",
+   "component": "HPT",
+   "corr_rul": 0.163,
+   "err_ref": 0.3085753321647644
+  },
+  {
+   "id": "s21",
+   "symbol": "W32",
+   "name": "LPT coolant bleed",
+   "component": "LPT",
+   "corr_rul": 0.174,
+   "err_ref": 0.31974172592163086
+  }
+ ],
+ "units": "standardised (z-score)"
+}

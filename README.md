@@ -3,6 +3,11 @@ TurboFan Jet Engine RUL Prediction
 TurboFan Jet engines are commonly used engines in commerical aircrafts. The jet engine might fail and could lead to catostraphic consequences, for which the industry has been using Preventive Mantennace, where the airlines have a set scehdhule to check these jet engines. But there are situations where the engine hasn't been caught on time, which promoted the industry to switch to Predictve Mantiannce. Predictv Maintnance uses machine learning and sensor readings within the jet engine to predict the remaining useful life of an engine, which means how many cycles the engine has left until it fails. This project makes a hybrid architecutre, combining Autoencoder with the Gaussian Process Regressor to predict the remainng useful life of jet engines. This unique architecutre has an RMSE of 19.6, which will be improving under interations. We use the NASA CMPASS Dataset, subset FD003.
 
 What makes this archieture unqiue?
+The NASA- CMPASS dataset has notoriosu amount of data with noise, so to combat this the autonecoer is able to compress these datapoints into a 2d Latent space for the Guasian Process to better predict the RUL. What unique about a regression si that it retursn a confidence interval, which is cirtiica in saftey risk scenarios.
+
+
+How it  is built:
+This architecutre is built off of https://github.com/insdout/Time-Series-Hybrid-Autoencoder Autoencoder archietuctre. I combine their TSHAE architecutre with a GPR
 
 
 
